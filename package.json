@@ -13,11 +13,11 @@
   },
   "keywords": [
     "hapi.js",
-    "lab",
+    "jasmine",
     "js"
   ],
   "author": "Dennis Johnson",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/songawee/testing_hapijs/issues"
   },
@@ -26,9 +26,7 @@
     "hapi": "^7.5.2"
   },
   "devDependencies": {
-    "chai": "^1.10.0",
     "jasmine-node": "^1.14.5",
-    "lab": "^5.1.0",
     "nodemon": "^1.2.1"
   }
 }
