@@ -1,9 +1,5 @@
-var Hapi = require('hapi');
-
-var data = {
-  one: "hello",
-  two: "world"
-};
+var Hapi = require("hapi");
+var data = require("../spec/fixtures/data");
 
 function createServer(port) {
   var server = new Hapi.Server(port);
@@ -12,19 +8,20 @@ function createServer(port) {
     path: "/",
     method: "GET",
     handler: function(request, reply) {
-      reply('hello world');
+      reply("hello world");
     }
   };
 
   var getData = {
-    path: "/data/{name}",
+    path: "/data/{index}",
     method: "GET",
     handler: function(request, reply) {
-      var isValidKey = typeof data[request.params.name] !== "undefined";
+      var index = parseInt(request.params.index);
+      var isValidKey = typeof data[index] !== "undefined";
       if (isValidKey) {
-        reply(data);
+        reply(data[index]);
       } else {
-        reply('Not Found').code(404);
+        reply("Not Found").code(404);
       }
     }
   };
